@@ -4,8 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class Matakuliah extends Model
 {
-    protected $table = 'table_mahasiswa';
-    protected $guarded = [];
+    protected $table = 'table_Matakuliah';
+
+     protected $fillable = [
+        'Jurusan',
+        'KodeMK',
+        'NamaMK'
+    ];
 }

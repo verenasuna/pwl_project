@@ -13,7 +13,7 @@
         <th>Tanggal Dibuat</th>
         <th>Aksi</th>
     </thead>
-    @foreach ($mahasiswa as $m)
+    @foreach ($Mahasiswa as $m)
     <tr>
         <td>{{$m->id}}</td>
         <td>{{$m->Fullname}}</td>

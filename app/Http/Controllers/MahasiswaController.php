@@ -13,7 +13,7 @@ class MahasiswaController extends Controller
     public function index()
     {
         return view('mahasiswa.index', [
-            'mahasiswa' => Mahasiswa::all()
+            'Mahasiswa' => Mahasiswa::all()
         ]);
     }
 
@@ -30,6 +30,7 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = $request->except('_token');
 
         Mahasiswa::create($data);

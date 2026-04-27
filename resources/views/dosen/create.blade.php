@@ -16,7 +16,7 @@
                 <td><input type="text" name="Fullname"></td>
             </tr>
             <tr>
-                <td>Nomor Dosen</td>
+                <td>NID</td>
                 <td>:</td>
                 <td><input type="text" name="NID"></td>
             </tr>

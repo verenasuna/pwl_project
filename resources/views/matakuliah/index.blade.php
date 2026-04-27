@@ -9,7 +9,7 @@
         <th>Nama Mata Kuliah</th>
         <th>Aksi</th>
     </thead>
-    @foreach ($matakuliah as $m)
+    @foreach ($Matakuliah as $m)
     <tr>
         <td>{{$m->id}}</td>
         <td>{{$m->Jurusan}}</td>
