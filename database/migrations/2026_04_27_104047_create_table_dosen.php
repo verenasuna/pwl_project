@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_dosen', function (Blueprint $table) {
+        Schema::create('dosen', function (Blueprint $table) {
             $table->id();
-            $table->string('Fullname');
-            $table->string('NID')->unique();
-            $table->string('Jurusan');
-            $table->text('Alamat');
+            $table->string('fullname');
+            $table->string('NIP')->unique();
+            $table->string('NIDN')->unique();
+            $table->string('pendidikan_terakhir')->nullable();
+            $table->string('jurusan_id')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tanggal_lahir')->nullable();
+            $table->text('alamat');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_dosen');
+        Schema::dropIfExists('dosen');
     }
 };

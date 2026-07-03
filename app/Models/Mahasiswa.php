@@ -2,10 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
-{
-    protected $table = 'table_Mahasiswa';
-    protected $guarded = [];
+class Mahasiswa extends Model 
+{ 
+    use HasFactory;
+
+    protected $table = 'mahasiswa';
+    
+    protected $fillable = [
+        'fullname',
+        'NIM',
+        'NISN',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'alamat'
+    ];
 }

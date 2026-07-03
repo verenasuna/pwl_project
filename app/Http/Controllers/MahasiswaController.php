@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class MahasiswaController
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class MahasiswaController extends Controller
     public function index()
     {
         return view('mahasiswa.index', [
-            'Mahasiswa' => Mahasiswa::all()
+            'mahasiswa' => Mahasiswa::all()
         ]);
     }
 
@@ -22,7 +22,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create', []);
+        return view('mahasiswa.create');
     }
 
     /**
@@ -30,7 +30,6 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        
         $data = $request->except('_token');
 
         Mahasiswa::create($data);
@@ -61,7 +60,7 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except('_token', 'id', '_method');
+        $data = $request->except('_token');
 
         Mahasiswa::find($id)->update($data);
 
@@ -71,11 +70,10 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id) // Tambahkan $id di sini
-{
-    // Cari data berdasarkan ID lalu hapus
-    \App\Models\Mahasiswa::find($id)->delete();
+    public function destroy($id)
+    {
+        Mahasiswa::find($id)->delete();//
 
-    return redirect()->action([MahasiswaController::class, 'index']);
-}
+        return redirect()->action([MahasiswaController::class, 'index']);
+    }
 }

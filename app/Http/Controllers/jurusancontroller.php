@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jurusan;
 use Illuminate\Http\Request;
 
-class JurusanController extends Controller
+class JurusanController
 {
     /**
      * Display a listing of the resource.
@@ -60,7 +60,7 @@ class JurusanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except('_token', 'id', '_method');
+        $data = $request->except('_token');
 
         Jurusan::find($id)->update($data);
 

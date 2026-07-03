@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use Illuminate\Http\Request;
 
-class DosenController extends Controller
+class DosenController
 {
     /**
      * Display a listing of the resource.
@@ -60,7 +60,7 @@ class DosenController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $data = $request->except('_token', 'id', '_method');
+        $data = $request->except('_token');
 
         Dosen::find($id)->update($data);
 
